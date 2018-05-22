@@ -1,0 +1,21 @@
+[user]
+	name = tikkss
+	email = tsuto.katsube@gmail.com
+[color]
+	ui = auto
+[alias]
+	st = status
+	br = branch
+	lo = log --oneline
+	df = diff
+	co = checkout
+	cob = checkout -b
+        aa = !git add -u && git add . && git status
+	c = commit -m
+	ac = !git add -u && git add . && git commit -m
+[core]
+	excludesfile = ~/.gitignore
+	editor = /usr/bin/vim
+[ghq]
+	root = ~/src
+
