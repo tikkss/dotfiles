@@ -39,3 +39,8 @@
 ehthumbs.db
 Thumbs.db
 
+# My config #
+#############
+.idea/
+.vagrant/
+
