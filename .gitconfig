@@ -1,21 +1,39 @@
 [user]
 	name = tikkss
 	email = tsuto.katsube@gmail.com
-[color]
-	ui = auto
+[include]
+	path = .gitconfig.local
+
 [alias]
-	st = status
+	a = add
+	aa = !git add -u && git add . && git status
+	ac = !git add -u && git add . && git commit -m
 	br = branch
-	lo = log --oneline
-	df = diff
+	c = commit -m
 	co = checkout
 	cob = checkout -b
-        aa = !git add -u && git add . && git status
-	c = commit -m
-	ac = !git add -u && git add . && git commit -m
+	df = diff
+	dfc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+	lo = log --oneline
+	st = status
+[branch]
+	autosetuprebase = always
+[color]
+	ui = auto
 [core]
-	excludesfile = ~/.gitignore
-	editor = /usr/bin/vim
+	editor = vim
+	# http://stackoverflow.com/questions/136178/git-diff-handling-long-lines
+	pager = less -r
 [ghq]
 	root = ~/src
-
+[merge]
+	# from 1.7.6
+	ff = false
+[pull]
+	# from 1.7.9
+	rebase = true
+[push]
+	# push only the current branch
+	default = current
