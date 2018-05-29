@@ -1,4 +1,4 @@
-:set clipboard+=unnamed
+set clipboard+=unnamed
 inoremap <silent> jj <ESC>
 
 " Split window
