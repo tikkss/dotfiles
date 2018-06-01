@@ -6,6 +6,7 @@ ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
 ln -snfv $dotfiles_base/.gitconfig ~/.gitconfig
 ln -snfv $dotfiles_base/.ideavimrc ~/.ideavimrc
+ln -snfv $dotfiles_base/.tmux.conf ~/.tmux.conf
 ln -snfv $dotfiles_base/.vimrc ~/.vimrc
 
 # for WSL
