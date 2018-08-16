@@ -1,3 +1,6 @@
+set -x PATH $HOME/.rbenv/bin $PATH
+rbenv init - fish | source
+
 set -x GOPATH $HOME
 set -x PATH $GOPATH/bin $PATH
 
