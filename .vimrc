@@ -20,5 +20,5 @@ nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
- " 8進→10進
- set nrformats=
+" 0前置の数値でも 8進 -> 10進扱い
+set nrformats=
