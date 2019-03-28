@@ -28,6 +28,8 @@
 	pager = less -r
 [ghq]
 	root = ~/src
+[init]
+	templatedir = ~/.git-templates/git-secrets
 [merge]
 	# from 1.7.6
 	ff = false
