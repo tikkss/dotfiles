@@ -14,4 +14,5 @@ ln -snfv $dotfiles_base/.vimrc ~/.vimrc
 # for WSL
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
+  sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 fi
