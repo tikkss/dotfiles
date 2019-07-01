@@ -10,6 +10,7 @@
 	ac = !git add -u && git add . && git commit -m
 	br = branch
 	c = commit -m
+	cah = commit --amend -C @
 	co = checkout
 	cob = checkout -b
 	df = diff
