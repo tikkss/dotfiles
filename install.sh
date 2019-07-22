@@ -15,4 +15,10 @@ ln -snfv $dotfiles_base/.vimrc ~/.vimrc
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
+
+  # Build & link diff-highlight
+  cd /usr/share/doc/git/contrib/diff-highlight/
+  sudo make
+  sudo ln -snfv /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
 fi
+
