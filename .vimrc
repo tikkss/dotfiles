@@ -3,7 +3,8 @@ inoremap <silent> jj <ESC>
 
 " Basic Settings
 set encoding=utf-8               " UTF-8
-set noswapfile                   " .swpを作らない
+set noswapfile                   " .swp を作らない（vimが強制終了してしまってもデータを復元できる）
+set noundofile                   " .un~ を作らない（ファイルを閉じて開いた後でもundoができる）
 set nowrap                       " 画面端で折り返さない
 set autoread                     " 更新時自動再読み込み
 set hlsearch                     " 検索結果ハイライト
