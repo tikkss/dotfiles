@@ -1,6 +1,16 @@
 set clipboard+=unnamed
 inoremap <silent> jj <ESC>
 
+" Basic Settings
+set encoding=utf-8               " UTF-8
+set noswapfile                   " .swpを作らない
+set nowrap                       " 画面端で折り返さない
+set autoread                     " 更新時自動再読み込み
+set hlsearch                     " 検索結果ハイライト
+set laststatus=2                 " 常にステータスラインを表示
+set number                       " Show line number
+set nrformats=                   " 0前置の数値でも 8進 -> 10進扱い
+
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
@@ -20,5 +30,12 @@ nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
-" 0前置の数値でも 8進 -> 10進扱い
-set nrformats=
+" Indent
+set autoindent    " 自動でインデント
+set smartindent   " 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする。
+set expandtab     " tabをspaceに置換しない
+set cindent       " Cプログラムファイルの自動インデントを始める
+set tabstop=2     " Tabの幅
+set softtabstop=0 " Tabを押した時の幅(0だとtabstopと同じ)
+set shiftwidth=2  " 自動インデントの各段階に使われる空白の数
+
