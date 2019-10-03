@@ -1,5 +1,12 @@
-set clipboard+=unnamed
 inoremap <silent> jj <ESC>
+set clipboard+=unnamed
+" yank then copy to clipboard for WSL
+if system('uname -a | grep Linux | grep Microsoft') != ''
+  augroup myYank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe', @")
+  augroup END
+endif
 
 " Basic Settings
 set encoding=utf-8               " UTF-8
