@@ -11,6 +11,7 @@ endif
 " Basic Settings
 set encoding=utf-8               " UTF-8
 set noswapfile                   " .swp を作らない（vimが強制終了してしまってもデータを復元できる）
+set nobackup                     " .~ を作らない（ファイル変更後に保存されるファイル編集前のバックアップ）
 set noundofile                   " .un~ を作らない（ファイルを閉じて開いた後でもundoができる）
 set nowrap                       " 画面端で折り返さない
 set autoread                     " 更新時自動再読み込み
