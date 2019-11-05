@@ -19,6 +19,7 @@ fi
 
 # for WSL
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
+  sudo ln -snfv $dotfiles_base/.config/etc/wsl.conf /etc/wsl.conf
   ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py "$(wslpath -u $APPDATA)/Keyhac/config.py"
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
