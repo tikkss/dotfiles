@@ -2,6 +2,7 @@
 
 dotfiles_base="$(cd $(dirname "$0") && pwd)"
 
+ln -snfv $dotfiles_base/.config/fish/conf.d/000-env.fish ~/.config/fish/conf.d/000-env.fish
 ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 mkdir -p ~/.config/git
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
