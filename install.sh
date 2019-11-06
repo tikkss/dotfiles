@@ -31,5 +31,11 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   cd /usr/share/doc/git/contrib/diff-highlight/
   sudo make
   sudo ln -snfv /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
+
+  # Download & move starship
+  cd /tmp
+  wget -q --show-progress https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz -O starship-x86_64-unknown-linux-gnu.tar.gz
+  tar xvf starship-x86_64-unknown-linux-gnu.tar.gz
+  sudo mv -fv target/x86_64-unknown-linux-gnu/release/starship /usr/local/bin/
 fi
 
