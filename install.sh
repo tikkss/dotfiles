@@ -52,6 +52,12 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
     mkdir -p $RBENV_ROOT/plugins
     git clone https://github.com/rbenv/ruby-build.git $RBENV_ROOT/plugins/ruby-build
   fi
+
+  # Clone & install fzf
+  if [ ! -d ~/.fzf ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --no-key-bindings --no-completion --no-update-rc --no-bash --no-zsh --no-fish
+  fi
 fi
 
 fish -c fisher
