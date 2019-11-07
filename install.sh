@@ -56,7 +56,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   # Clone & install fzf
   if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --no-key-bindings --no-completion --no-update-rc --no-bash --no-zsh --no-fish
+    ~/.fzf/install --all
   fi
 fi
 
