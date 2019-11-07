@@ -37,5 +37,11 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   wget -q --show-progress https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz -O starship-x86_64-unknown-linux-gnu.tar.gz
   tar xvf starship-x86_64-unknown-linux-gnu.tar.gz
   sudo mv -fv target/x86_64-unknown-linux-gnu/release/starship /usr/local/bin/
+
+  # Download & move ghq
+  cd /tmp
+  wget -q --show-progress https://github.com/motemen/ghq/releases/latest/download/ghq_linux_amd64.zip -O ghq_linux_amd64.zip
+  unzip -o ghq_linux_amd64.zip
+  sudo mv -fv ghq_linux_amd64/ghq /usr/local/bin/
 fi
 
