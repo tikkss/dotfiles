@@ -43,6 +43,12 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   unzip -o ghq_linux_amd64.zip
   sudo mv -fv ghq_linux_amd64/ghq /usr/local/bin/
 
+  # Download & move mattn/memo
+  cd /tmp
+  wget -q --show-progress https://github.com/mattn/memo/releases/latest/download/memo_linux_amd64.zip -O memo_linux_amd64.zip
+  unzip -o memo_linux_amd64.zip
+  sudo mv -fv memo /usr/local/bin/
+
   # Clone or pull rbenv
   if [ -d $RBENV_ROOT ]; then
     cd $RBENV_ROOT && git pull
@@ -58,6 +64,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install --all
   fi
+
 fi
 
 fish -c fisher
