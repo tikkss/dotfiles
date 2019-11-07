@@ -1,4 +1,5 @@
-set -x PATH $HOME/.rbenv/bin $PATH
+set -x RBENV_ROOT $HOME/.rbenv
+set -x PATH $RBENV_ROOT/bin $PATH
 
 set -x GOPATH $HOME
 set -x PATH $GOPATH/bin $PATH

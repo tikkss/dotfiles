@@ -5,7 +5,6 @@ dotfiles_base="$(cd $(dirname "$0") && pwd)"
 ln -snfv $dotfiles_base/.config/fish/conf.d/000-env.fish ~/.config/fish/conf.d/000-env.fish
 ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 ln -snfv $dotfiles_base/.config/fish/fishfile ~/.config/fish/fishfile
-fish -c fisher
 mkdir -p ~/.config/git
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
 ln -snfv $dotfiles_base/.gemrc ~/.gemrc
@@ -43,5 +42,17 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   wget -q --show-progress https://github.com/motemen/ghq/releases/latest/download/ghq_linux_amd64.zip -O ghq_linux_amd64.zip
   unzip -o ghq_linux_amd64.zip
   sudo mv -fv ghq_linux_amd64/ghq /usr/local/bin/
+
+  # Clone or pull rbenv
+  if [ -d $RBENV_ROOT ]; then
+    cd $RBENV_ROOT && git pull
+    cd $RBENV_ROOT/plugins/ruby-build && git pull
+  else
+    git clone https://github.com/rbenv/rbenv.git $RBENV_ROOT
+    mkdir -p $RBENV_ROOT/plugins
+    git clone https://github.com/rbenv/ruby-build.git $RBENV_ROOT/plugins/ruby-build
+  fi
 fi
+
+fish -c fisher
 
