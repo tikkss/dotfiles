@@ -3,16 +3,19 @@
 dotfiles_base="$(cd $(dirname "$0") && pwd)"
 
 mkdir -p ~/.config/fish/conf.d
+mkdir -p ~/.config/git
+mkdir -p ~/.vim/colors
 ln -snfv $dotfiles_base/.config/fish/conf.d/000-env.fish ~/.config/fish/conf.d/000-env.fish
 ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 ln -snfv $dotfiles_base/.config/fish/fishfile ~/.config/fish/fishfile
-mkdir -p ~/.config/git
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
 ln -snfv $dotfiles_base/.gemrc ~/.gemrc
 ln -snfv $dotfiles_base/.gitconfig ~/.gitconfig
+ln -snfv $dotfiles_base/.gvimrc ~/.gvimrc
 ln -snfv $dotfiles_base/.ideavimrc ~/.ideavimrc
 ln -snfv $dotfiles_base/.tigrc ~/.tigrc
 ln -snfv $dotfiles_base/.tmux.conf ~/.tmux.conf
+ln -snfv $dotfiles_base/.vim/colors/railscasts.vim ~/.vim/colors/railscasts.vim
 ln -snfv $dotfiles_base/.vimrc ~/.vimrc
 
 # for Mac
