@@ -6,6 +6,6 @@ case 0000
 end
 
 function rubymine
-  "/c/Program Files/JetBrains/RubyMine 2018.1.4/bin/rubymine64.exe" .
+  cmd.exe /c rubymine.cmd (wslpath -w (pwd))
 end
 
