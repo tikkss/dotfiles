@@ -1,5 +1,7 @@
 set -x DOCKER_HOST 'tcp://0.0.0.0:2375'
 
+alias gvim gvim.exe
+
 switch (umask)
 case 0000
   umask 0022

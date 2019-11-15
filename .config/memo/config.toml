@@ -1,0 +1,7 @@
+memodir = "~/Dropbox/memo/_posts"
+editor = "gvim"
+column = 20
+selectcmd = "fzf"
+grepcmd = "grep -nH ${PATTERN} ${FILES}"
+assetsdir = "."
+pluginsdir = "~/Dropbox/memo/plugins"

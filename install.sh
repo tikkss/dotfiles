@@ -4,11 +4,13 @@ dotfiles_base="$(cd $(dirname "$0") && pwd)"
 
 mkdir -p ~/.config/fish/conf.d
 mkdir -p ~/.config/git
+mkdir -p ~/.config/memo
 mkdir -p ~/.vim/colors
 ln -snfv $dotfiles_base/.config/fish/conf.d/000-env.fish ~/.config/fish/conf.d/000-env.fish
 ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 ln -snfv $dotfiles_base/.config/fish/fishfile ~/.config/fish/fishfile
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
+ln -snfv $dotfiles_base/.config/memo/config.toml ~/.config/memo/config.toml
 ln -snfv $dotfiles_base/.gemrc ~/.gemrc
 ln -snfv $dotfiles_base/.gitconfig ~/.gitconfig
 ln -snfv $dotfiles_base/.gvimrc ~/.gvimrc
@@ -26,9 +28,11 @@ fi
 # for WSL
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   mkdir -p "$(wslpath -u $APPDATA)/../../.config/git"
+  mkdir -p "$(wslpath -u $APPDATA)/../../.config/memo"
   ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py "$(wslpath -u $APPDATA)/Keyhac/config.py"
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
   ln -nfv $dotfiles_base/.config/git/ignore "$(wslpath -u $APPDATA)/../../.config/git/ignore"
+  ln -nfv $dotfiles_base/.config/memo/config.toml "$(wslpath -u $APPDATA)/../../.config/memo/config.toml"
   ln -nfv $dotfiles_base/.gitconfig "$(wslpath -u $APPDATA)/../../.gitconfig"
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 
