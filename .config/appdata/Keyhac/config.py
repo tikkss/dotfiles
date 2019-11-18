@@ -106,3 +106,7 @@ def configure(keymap):
     keymap_global[ "RS-8" ] = "F8"
     keymap_global[ "RS-9" ] = "F9"
     keymap_global[ "RS-0" ] = "F0"
+
+    # Clipboard list
+    keymap_global[ "A-S-V" ] = keymap.command_ClipboardList
+
