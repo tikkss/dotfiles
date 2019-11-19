@@ -19,6 +19,7 @@ set hlsearch                     " 検索結果ハイライト
 set laststatus=2                 " 常にステータスラインを表示
 set number                       " Show line number
 set nrformats=                   " 0前置の数値でも 8進 -> 10進扱い
+set backspace=indent,eol,start   " Insert mode で backspace が効かないケースに対処
 
 " Split window
 nmap ss :split<Return><C-w>w
