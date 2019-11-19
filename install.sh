@@ -35,6 +35,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   ln -snfv $dotfiles_base/.config/memo/config.wsl.toml ~/.config/memo/config.toml
   ln -nfv $dotfiles_base/.config/memo/config.toml "$(wslpath -u $APPDATA)/../../.config/memo/config.toml"
   ln -nfv $dotfiles_base/.gitconfig "$(wslpath -u $APPDATA)/../../.gitconfig"
+  ln -nfv $dotfiles_base/.ideavimrc "$(wslpath -u $APPDATA)/../../.ideavimrc"
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 
   # Build & link diff-highlight
