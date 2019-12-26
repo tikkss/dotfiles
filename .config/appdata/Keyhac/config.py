@@ -29,9 +29,11 @@ def configure(keymap):
 
     # Cursor bindings
     keymap_global[ "C-A" ]   = "Home"
+    keymap_global[ "C-S-A" ] = "S-Home"
     keymap_global[ "C-B" ]   = "Left"
     keymap_global[ "C-S-B" ] = "S-Left"
     keymap_global[ "C-E" ]   = "End"
+    keymap_global[ "C-S-E" ] = "S-End"
     keymap_global[ "C-F" ]   = "Right"
     keymap_global[ "C-S-F" ] = "S-Right"
     keymap_global[ "C-N" ]   = "Down"
@@ -41,9 +43,11 @@ def configure(keymap):
 
     # Alt as Command instead of Cursor bindings
     keymap_global[ "A-A" ]   = "C-A"
+    keymap_global[ "A-S-A" ] = "C-S-A"
     keymap_global[ "A-B" ]   = "C-B"
     keymap_global[ "A-S-B" ] = "C-S-B"
     keymap_global[ "A-E" ]   = "C-E"
+    keymap_global[ "A-S-E" ] = "C-S-E"
     keymap_global[ "A-F" ]   = "C-F"
     keymap_global[ "A-S-F" ] = "C-S-F"
     keymap_global[ "A-N" ]   = "C-N"
