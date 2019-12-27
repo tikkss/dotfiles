@@ -125,6 +125,7 @@ def configure(keymap):
             ])
         )
         keymap_vim[ "O-LCtrl" ] = vim_escape
+        keymap_vim[ "A-V" ]     = "S-Insert"
 
     # Mac like bindings
     if 1:
