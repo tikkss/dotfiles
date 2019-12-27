@@ -113,9 +113,9 @@ def configure(keymap):
         # Clipboard list
         keymap_global[ "A-S-V" ] = keymap.command_ClipboardList
 
-    # Vim escape bindings
+    # Vim bindings
     if 1:
-        keymap_post_vim_esc_if_left_control_is_pressed_alone = keymap.defineWindowKeymap(
+        keymap_vim = keymap.defineWindowKeymap(
             check_func=activate_if([
               "cmd.exe",
               "gvim.exe",
@@ -124,7 +124,7 @@ def configure(keymap):
               "rubymine64.exe",
             ])
         )
-        keymap_post_vim_esc_if_left_control_is_pressed_alone[ "O-LCtrl" ] = vim_escape
+        keymap_vim[ "O-LCtrl" ] = vim_escape
 
     # Mac like bindings
     if 1:
