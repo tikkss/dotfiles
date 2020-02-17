@@ -117,6 +117,7 @@ def configure(keymap):
     if 1:
         keymap_vim = keymap.defineWindowKeymap(
             check_func=activate_if([
+              "Code.exe",
               "cmd.exe",
               "gvim.exe",
               "mintty.exe",
