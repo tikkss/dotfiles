@@ -136,7 +136,6 @@ def configure(keymap):
               "gvim.exe",
               "mintty.exe",
               "powershell.exe",
-              "rubymine64.exe",
             ])
         )
 
