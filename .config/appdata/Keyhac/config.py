@@ -128,6 +128,27 @@ def configure(keymap):
         keymap_vim[ "O-LCtrl" ] = vim_escape
         keymap_vim[ "A-V" ]     = "S-Insert"
 
+    # Mac like control bindings
+    if 1:
+        keymap_mac_like = keymap.defineWindowKeymap(
+            check_func=activate_unless([
+              "Code.exe",
+              "cmd.exe",
+              "gvim.exe",
+              "mintty.exe",
+              "powershell.exe",
+              "rubymine64.exe",
+            ])
+        )
+
+        # Control bindings
+        keymap_mac_like[ "C-D" ] = "Delete"
+        keymap_mac_like[ "C-H" ] = "Back"
+        keymap_mac_like[ "C-J" ] = "Enter"
+        keymap_mac_like[ "C-K" ] = "S-End","Delete"
+        keymap_mac_like[ "C-U" ] = "S-Home","Delete"
+        keymap_mac_like[ "C-W" ] = "C-S-Left","Delete"
+
     # Mac like bindings
     if 1:
         keymap_mac_like = keymap.defineWindowKeymap(
@@ -172,14 +193,6 @@ def configure(keymap):
         keymap_mac_like[ "C-W-S-B" ] = "C-S-Left"
         keymap_mac_like[ "C-W-F" ]   = "C-Right"
         keymap_mac_like[ "C-W-S-F" ] = "C-S-Right"
-
-        # Ctrl bindings
-        keymap_mac_like[ "C-D" ] = "Delete"
-        keymap_mac_like[ "C-H" ] = "Back"
-        keymap_mac_like[ "C-J" ] = "Enter"
-        keymap_mac_like[ "C-K" ] = "S-End","Delete"
-        keymap_mac_like[ "C-U" ] = "S-Home","Delete"
-        keymap_mac_like[ "C-W" ] = "C-S-Left","Delete"
 
         # Alt as Command instead of Ctrl bindings
         keymap_mac_like[ "A-D" ] = "C-D"
