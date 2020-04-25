@@ -1,3 +1,3 @@
 colorscheme railscasts
-set guifont=Ricty\ for\ Powerline:h14
+set guifont=Ricty\ for\ Powerline:h16
 
