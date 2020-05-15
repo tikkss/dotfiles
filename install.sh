@@ -11,6 +11,7 @@ ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 ln -snfv $dotfiles_base/.config/fish/fishfile ~/.config/fish/fishfile
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
 ln -snfv $dotfiles_base/.config/memo/config.toml ~/.config/memo/config.toml
+ln -snfv $dotfiles_base/.config/starship.toml ~/.config/starship.toml
 ln -snfv $dotfiles_base/.gemrc ~/.gemrc
 ln -snfv $dotfiles_base/.gitconfig ~/.gitconfig
 ln -snfv $dotfiles_base/.gvimrc ~/.gvimrc
