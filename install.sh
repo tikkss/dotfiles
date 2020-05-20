@@ -31,6 +31,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
   mkdir -p "$(wslpath -u $APPDATA)/../../.config/git"
   mkdir -p "$(wslpath -u $APPDATA)/../../.config/memo"
   ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py "$(wslpath -u $APPDATA)/Keyhac/config.py"
+  ln -nfv $dotfiles_base/.config/appdata/WindowsTerminal/settings.json "$(wslpath -u $APPDATA)/../Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
   ln -nfv $dotfiles_base/.config/git/ignore "$(wslpath -u $APPDATA)/../../.config/git/ignore"
   ln -snfv $dotfiles_base/.config/memo/config.wsl.toml ~/.config/memo/config.toml
