@@ -123,6 +123,7 @@ def configure(keymap):
               "mintty.exe",
               "powershell.exe",
               "rubymine64.exe",
+              "WindowsTerminal.exe",
             ])
         )
         keymap_vim[ "O-LCtrl" ] = vim_escape
@@ -138,6 +139,7 @@ def configure(keymap):
               "mintty.exe",
               "powershell.exe",
               "rubymine64.exe",
+              "WindowsTerminal.exe",
             ])
         )
 
@@ -157,6 +159,7 @@ def configure(keymap):
               "gvim.exe",
               "mintty.exe",
               "powershell.exe",
+              "WindowsTerminal.exe",
             ])
         )
 
