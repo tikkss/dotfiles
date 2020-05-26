@@ -53,5 +53,14 @@
 
     // Add any keybinding overrides to this array.
     // To unbind a default keybinding, set the command to "unbound"
-    "keybindings": []
+    "keybindings":
+    [
+        // Pane Management
+        { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+d" },
+        { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+d" },
+        { "command": { "action": "resizePane", "direction": "down" }, "keys": "ctrl+alt+/" },
+        { "command": { "action": "resizePane", "direction": "left" }, "keys": "ctrl+alt+;" },
+        { "command": { "action": "resizePane", "direction": "right" }, "keys": "ctrl+alt+'" },
+        { "command": { "action": "resizePane", "direction": "up" }, "keys": "ctrl+alt+[" }
+    ]
 }

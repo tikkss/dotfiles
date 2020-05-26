@@ -205,3 +205,18 @@ def configure(keymap):
         keymap_mac_like[ "A-U" ] = "C-U"
         keymap_mac_like[ "A-W" ] = "C-W"
 
+    # iTerm2 like bindings
+    # Windows Terminal does not allow `win+` keybindings
+    # https://docs.microsoft.com/ja-jp/windows/terminal/customize-settings/key-bindings#modifiers
+    if 1:
+        keymap_iterm2_like = keymap.defineWindowKeymap(
+            check_func=activate_if([
+              "WindowsTerminal.exe",
+            ])
+        )
+
+        # Pane move focus bindings
+        keymap_iterm2_like[ "W-A-Semicolon" ]   = "A-Left"
+        keymap_iterm2_like[ "W-A-Quote" ]       = "A-Right"
+        keymap_iterm2_like[ "W-A-Slash" ]       = "A-Down"
+        keymap_iterm2_like[ "W-A-OpenBracket" ] = "A-Up"
