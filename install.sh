@@ -28,16 +28,19 @@ fi
 
 # for WSL
 if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
-  mkdir -p "$(wslpath -u $APPDATA)/../../.config/git"
-  mkdir -p "$(wslpath -u $APPDATA)/../../.config/memo"
-  ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py "$(wslpath -u $APPDATA)/Keyhac/config.py"
-  ln -nfv $dotfiles_base/.config/appdata/WindowsTerminal/settings.json "$(wslpath -u $APPDATA)/../Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+  userprofile="$(wslpath -u $(wslvar USERPROFILE))"
+  appdata="$(wslpath -u $(wslvar APPDATA))"
+
+  mkdir -p $userprofile/.config/git
+  mkdir -p $userprofile/.config/memo
+  ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py $appdata/Keyhac/config.py
+  ln -nfv $dotfiles_base/.config/appdata/WindowsTerminal/settings.json $appdata/../Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
-  ln -nfv $dotfiles_base/.config/git/ignore "$(wslpath -u $APPDATA)/../../.config/git/ignore"
+  ln -nfv $dotfiles_base/.config/git/ignore $userprofile/.config/git/ignore
   ln -snfv $dotfiles_base/.config/memo/config.wsl.toml ~/.config/memo/config.toml
-  ln -nfv $dotfiles_base/.config/memo/config.toml "$(wslpath -u $APPDATA)/../../.config/memo/config.toml"
-  ln -nfv $dotfiles_base/.gitconfig "$(wslpath -u $APPDATA)/../../.gitconfig"
-  ln -nfv $dotfiles_base/.ideavimrc "$(wslpath -u $APPDATA)/../../.ideavimrc"
+  ln -nfv $dotfiles_base/.config/memo/config.toml $userprofile/.config/memo/config.toml
+  ln -nfv $dotfiles_base/.gitconfig $userprofile/.gitconfig
+  ln -nfv $dotfiles_base/.ideavimrc $userprofile/.ideavimrc
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 
   # Build & link diff-highlight
