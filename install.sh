@@ -27,7 +27,7 @@ if [[ `uname -a` =~ Darwin ]]; then
 fi
 
 # for WSL
-if [[ `uname -a` =~ Linux && `uname -a` =~ Microsoft ]]; then
+if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   userprofile="$(wslpath -u $(wslvar USERPROFILE))"
   appdata="$(wslpath -u $(wslvar APPDATA))"
 
