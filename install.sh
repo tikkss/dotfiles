@@ -63,9 +63,9 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
 
   # Download & move mattn/memo
   cd /tmp
-  wget -q --show-progress https://github.com/mattn/memo/releases/latest/download/memo_linux_amd64.zip -O memo_linux_amd64.zip
-  unzip -o memo_linux_amd64.zip
-  sudo mv -fv memo /usr/local/bin/
+  wget -q --show-progress https://github.com/mattn/memo/releases/latest/download/memo_v0.0.13_linux_amd64.tar.gz -O memo_linux_amd64.tar.gz
+  tar xvf memo_linux_amd64.tar.gz
+  sudo mv -fv memo_v0.0.13_linux_amd64/memo /usr/local/bin/
 
   # Clone or pull rbenv
   if [ -d $RBENV_ROOT ]; then
