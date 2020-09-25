@@ -77,6 +77,16 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
     git clone https://github.com/rbenv/ruby-build.git $RBENV_ROOT/plugins/ruby-build
   fi
 
+  # Clone or pull nodenv
+  if [ -d $NODENV_ROOT ]; then
+    cd $NODENV_ROOT && git pull
+    cd $NODENV_ROOT/plugins/node-build && git pull
+  else
+    curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
+    mkdir -p $NODENV_ROOT/plugins
+    git clone https://github.com/nodenv/node-build.git $NODENV_ROOT/plugins/node-build
+  fi
+
   # Clone & install fzf
   if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
