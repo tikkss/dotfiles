@@ -87,6 +87,13 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
     git clone https://github.com/nodenv/node-build.git $NODENV_ROOT/plugins/node-build
   fi
 
+  # Install Yarn without Node.js
+  if [ ! -d ~/.yarn ]; then
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  fi
+  sudo apt update && sudo apt install --no-install-recommends yarn
+
   # Clone & install fzf
   if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
