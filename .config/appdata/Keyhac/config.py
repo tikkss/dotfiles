@@ -76,6 +76,14 @@ def configure(keymap):
         keymap_global[ "W-Quote" ]       = "W-Right"
         keymap_global[ "W-Slash" ]       = "W-Down"
         keymap_global[ "W-OpenBracket" ] = "W-Up"
+        # Window snap bindings (expand the window to multiple zones)
+        # Required microsoft/PowerToys FancyZones
+        #   - [x] Override Windows Snap hotkeys (Win+Arrow) to move between zones
+        #   - [x] Move windows based on their position
+        keymap_global[ "W-C-A-Semicolon" ]   = "W-C-A-Left"
+        keymap_global[ "W-C-A-Quote" ]       = "W-C-A-Right"
+        keymap_global[ "W-C-A-Slash" ]       = "W-C-A-Down"
+        keymap_global[ "W-C-A-OpenBracket" ] = "W-C-A-Up"
 
         # Virtual Desktop bindings
         keymap_global[ "C-Semicolon" ] = "W-C-Left"
