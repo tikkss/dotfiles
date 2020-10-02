@@ -80,10 +80,10 @@ def configure(keymap):
         # Required microsoft/PowerToys FancyZones
         #   - [x] Override Windows Snap hotkeys (Win+Arrow) to move between zones
         #   - [x] Move windows based on their position
-        keymap_global[ "W-C-A-Semicolon" ]   = "W-C-A-Left"
-        keymap_global[ "W-C-A-Quote" ]       = "W-C-A-Right"
-        keymap_global[ "W-C-A-Slash" ]       = "W-C-A-Down"
-        keymap_global[ "W-C-A-OpenBracket" ] = "W-C-A-Up"
+        keymap_global[ "W-A-Semicolon" ]   = "W-C-A-Left"
+        keymap_global[ "W-A-Quote" ]       = "W-C-A-Right"
+        keymap_global[ "W-A-Slash" ]       = "W-C-A-Down"
+        keymap_global[ "W-A-OpenBracket" ] = "W-C-A-Up"
 
         # Virtual Desktop bindings
         keymap_global[ "C-Semicolon" ] = "W-C-Left"
