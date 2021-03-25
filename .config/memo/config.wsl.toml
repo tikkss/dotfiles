@@ -1,5 +1,5 @@
 memodir = "~/Dropbox/memo/_posts"
-editor = "code"
+editor = "gvim.exe"
 column = 20
 selectcmd = "fzf"
 grepcmd = "grep -nH ${PATTERN} ${FILES}"
