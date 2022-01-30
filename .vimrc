@@ -1,4 +1,3 @@
-inoremap <silent> jj <ESC>
 set clipboard+=unnamed
 " yank then copy to clipboard for WSL
 if system('uname -a | grep Linux | grep Microsoft') != ''
