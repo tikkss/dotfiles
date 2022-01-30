@@ -2,6 +2,9 @@ set clipboard+=unnamed
 set surround
 set multiple-cursors
 
+set visualbell
+set noerrorbells
+
 inoremap <silent> jj <ESC>
 
 " Split window
