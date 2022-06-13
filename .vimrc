@@ -40,6 +40,12 @@ nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
+" Edit tab
+nmap te :tabedit 
+" Move tab
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
+
 " Indent
 inoremap <S-Tab> <C-d> " unindent
 set autoindent    " 自動でインデント
