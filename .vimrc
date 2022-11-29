@@ -60,3 +60,9 @@ set shiftwidth=2  " 自動インデントの各段階に使われる空白の数
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn=+1
 
+" Plugin vim-plug
+call plug#begin()
+Plug 'ctrlpvim/ctrlp.vim'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+call plug#end()
+
