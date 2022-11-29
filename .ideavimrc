@@ -19,3 +19,9 @@ map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
 
+" Edit tab
+nmap te :tabedit 
+" Move tab
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
+
