@@ -56,3 +56,7 @@ set tabstop=2     " Tabの幅
 set softtabstop=0 " Tabを押した時の幅(0だとtabstopと同じ)
 set shiftwidth=2  " 自動インデントの各段階に使われる空白の数
 
+" Git commit message
+autocmd FileType gitcommit set textwidth=72
+autocmd FileType gitcommit set colorcolumn=+1
+
