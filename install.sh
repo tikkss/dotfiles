@@ -36,6 +36,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   mkdir -p $userprofile/.config/git
   mkdir -p $userprofile/.config/memo
   ln -nfv $dotfiles_base/alacritty.yml $appdata/alacritty/
+  ln -nfv $dotfiles_base/alacritty.windows.yml $appdata/alacritty/
   ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py $appdata/Keyhac/config.py
   ln -nfv $dotfiles_base/.config/appdata/WindowsTerminal/settings.json $appdata/../Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
   ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish

@@ -1,0 +1,16 @@
+# Shell
+#
+# You can set `shell.program` to the path of your favorite shell, e.g.
+# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
+# shell.
+#
+# Default:
+#   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
+#   - (Windows) powershell
+shell:
+  program: wsl.exe --distribution Ubuntu-18.04 --exec /usr/bin/fish
+  args:
+    - -l
+    - -c
+    - tmux
+
