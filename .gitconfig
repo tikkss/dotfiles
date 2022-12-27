@@ -11,8 +11,6 @@
 	br = branch
 	c = commit -m
 	cah = commit --amend -C @
-	co = checkout
-	cob = checkout -b
 	df = diff
 	dfc = diff --cached
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -20,6 +18,8 @@
 	lo = log --oneline
 	rs = restore
 	st = status
+	sw = switch
+	swc = switch -c
 [branch]
 	autosetuprebase = always
 [color]
