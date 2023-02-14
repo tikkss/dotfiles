@@ -1,6 +1,9 @@
 set -x RBENV_ROOT $HOME/.rbenv
 set -x PATH $RBENV_ROOT/bin $PATH
 
+set -x NODENV_ROOT $HOME/.nodenv
+set -x PATH $NODENV_ROOT/bin $PATH
+
 set -x GOPATH $HOME
 set -x PATH $GOPATH/bin $PATH
 

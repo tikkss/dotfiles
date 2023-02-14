@@ -53,23 +53,14 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   sudo make
   sudo ln -snfv /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
 
-  # Download & move starship
-  cd /tmp
-  wget -q --show-progress https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz -O starship-x86_64-unknown-linux-gnu.tar.gz
-  tar xvf starship-x86_64-unknown-linux-gnu.tar.gz
-  sudo mv -fv starship /usr/local/bin/
+  # Install starship
+  curl -sS https://starship.rs/install.sh | sh -s -- --yes
 
-  # Download & move ghq
-  cd /tmp
-  wget -q --show-progress https://github.com/motemen/ghq/releases/latest/download/ghq_linux_amd64.zip -O ghq_linux_amd64.zip
-  unzip -o ghq_linux_amd64.zip
-  sudo mv -fv ghq_linux_amd64/ghq /usr/local/bin/
+  # Install ghq
+  go install github.com/x-motemen/ghq@latest
 
-  # Download & move mattn/memo
-  cd /tmp
-  wget -q --show-progress https://github.com/mattn/memo/releases/latest/download/memo_v0.0.13_linux_amd64.tar.gz -O memo_linux_amd64.tar.gz
-  tar xvf memo_linux_amd64.tar.gz
-  sudo mv -fv memo_v0.0.13_linux_amd64/memo /usr/local/bin/
+  # Install mattn/memo
+  go install github.com/mattn/memo@latest
 
   # Clone or pull rbenv
   if [ -d $RBENV_ROOT ]; then
@@ -98,6 +89,9 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   fi
   sudo apt update && sudo apt install --no-install-recommends yarn
 
+  # Install zoxide
+  curl -sS https://webinstall.dev/zoxide | bash
+
   # Clone & install fzf
   if [ ! -d ~/.fzf ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -106,5 +100,5 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
 
 fi
 
-fish -c fisher
+fish -c "fisher update"
 
