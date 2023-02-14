@@ -111,6 +111,12 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
     sudo apt update
     sudo apt install gh -y
   fi
+
+  # Install heroku CLI
+  heroku --version > /dev/null 2>&1
+  if [ $? -eq 127 ]; then
+    curl https://cli-assets.heroku.com/install.sh | sh
+  fi
 fi
 
 fish -c "fisher update"
