@@ -21,6 +21,11 @@ set nrformats=                   " 0前置の数値でも 8進 -> 10進扱い
 set backspace=indent,eol,start   " Insert mode で backspace が効かないケースに対処
 set belloff=all
 
+" Color Settings
+set hlsearch
+hi Search ctermbg=Yellow
+hi Search ctermfg=Black
+
 " Split window
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
