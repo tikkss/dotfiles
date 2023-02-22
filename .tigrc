@@ -1,2 +1,3 @@
 set diff-highlight = true
+bind generic P !fish -c "clear; and open-pull-request %(commit)"
 
