@@ -5,6 +5,6 @@ function open-pull-request
     set pull_request_number (git log -1 --format=%B $merge_commit | sed -e 's/^.*#\([0-9]*\).*$/\1/' | head -1)
     set url "$repo_url/pull/$pull_request_number"
   end
-  gh pr view --comments $pull_request_number
+  gh pr view --web $pull_request_number
 end
 
