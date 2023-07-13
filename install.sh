@@ -9,6 +9,7 @@ mkdir -p ~/.vim/colors
 ln -snfv $dotfiles_base/.config/fish/conf.d/000-env.fish ~/.config/fish/conf.d/000-env.fish
 ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
 ln -snfv $dotfiles_base/.config/fish/fishfile ~/.config/fish/fishfile
+ln -snfv $dotfiles_base/.config/fish/functions/git_branch_search.fish ~/.config/fish/functions/git_branch_search.fish
 ln -snfv $dotfiles_base/.config/fish/functions/open-pull-request.fish ~/.config/fish/functions/open-pull-request.fish
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
 ln -snfv $dotfiles_base/.config/memo/config.toml ~/.config/memo/config.toml
