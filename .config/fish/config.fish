@@ -11,6 +11,5 @@ test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.
 starship init fish | source
 zoxide init fish | source
 
-# \e is \c[
-bind \e git_branch_search
+bind \c] git_branch_search
 
