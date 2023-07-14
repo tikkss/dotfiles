@@ -12,9 +12,7 @@ function git_branch_search -d 'Git branch search'
     set -l query (commandline -b)
     [ -n "$query" ]; and set flags --query="$query"; or set flags
     switch "$selector"
-        case fzf
-            git branch --sort=-committerdate | sed -e "s/^.* //g" | "$selector" $selector_options $flags --preview "git --no-pager log -20 --color=always {}" | read select
-        case fzf-tmux peco percol fzy sk
+        case fzf fzf-tmux peco percol fzy sk
             git branch --sort=-committerdate | sed -e "s/^.* //g" | "$selector" $selector_options $flags | read select
         case \*
             printf "\nERROR: plugin-ghq is not support '$selector'.\n"
