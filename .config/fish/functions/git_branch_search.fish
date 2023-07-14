@@ -18,5 +18,5 @@ function git_branch_search -d 'Git branch search'
             printf "\nERROR: plugin-ghq is not support '$selector'.\n"
     end
     [ -n "$select" ]; and git switch "$select"
-    commandline -f repaint
+    commandline -f execute
 end
