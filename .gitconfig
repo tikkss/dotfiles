@@ -25,6 +25,7 @@
 [color]
 	ui = auto
 [core]
+	commentchar = ~
 	editor = vim
 	# http://stackoverflow.com/questions/136178/git-diff-handling-long-lines
 	pager = less -r
