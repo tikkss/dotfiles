@@ -1,0 +1,14 @@
+export DOCKER_HOST="tcp://0.0.0.0:2375"
+export SSH_AUTH_SOCK="/c/wsl-ssh-agent/ssh-agent.sock"
+
+alias gvim gvim.exe
+alias open xdg-open
+
+if [ "$(umask)" = "000" ]; then
+  umask 0022
+fi
+
+function rubymine() {
+  cmd.exe /c rubymine.cmd $(wslpath -w $(pwd))
+}
+

@@ -22,6 +22,7 @@ ln -snfv $dotfiles_base/.tigrc ~/.tigrc
 ln -snfv $dotfiles_base/.tmux.conf ~/.tmux.conf
 ln -snfv $dotfiles_base/.vim/colors/railscasts.vim ~/.vim/colors/railscasts.vim
 ln -snfv $dotfiles_base/.vimrc ~/.vimrc
+ln -snfv $dotfiles_base/.zshrc ~/.zshrc
 
 # for Mac
 if [[ `uname -a` =~ Darwin ]]; then
@@ -49,6 +50,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   ln -nfv $dotfiles_base/.gitconfig $userprofile/.gitconfig
   ln -nfv $dotfiles_base/.ideavimrc $userprofile/.ideavimrc
   ln -nfv $dotfiles_base/.wslconfig $userprofile/.wslconfig
+  ln -snfv $dotfiles_base/.zshrc.wsl ~/.zshrc.local
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 
   # Build & link diff-highlight
@@ -120,6 +122,19 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   if [ $? -eq 127 ]; then
     curl https://cli-assets.heroku.com/install.sh | sh
   fi
+fi
+
+# Clone or pull zsh plugins
+mkdir -p ~/.zsh.d/plugins
+if [ -d ~/.zsh.d/plugins/zsh-autosuggestions ]; then
+  cd ~/.zsh.d/plugins/zsh-autosuggestions && git pull
+else
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh.d/plugins/zsh-autosuggestions
+fi
+if [ -d ~/.zsh.d/plugins/zsh-syntax-highlighting ]; then
+  cd ~/.zsh.d/plugins/zsh-syntax-highlighting && git pull
+else
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh.d/plugins/zsh-syntax-highlighting
 fi
 
 fish -c "fisher update"

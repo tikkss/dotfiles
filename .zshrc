@@ -1,108 +1,133 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/tsuto/.oh-my-zsh
+# Set up the prompt
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="blinks"
+autoload -Uz promptinit
+promptinit
+# Disable for starship
+# prompt adam1
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+setopt histignorealldups sharehistory
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# Use modern completion system
+autoload -Uz compinit
+compinit
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
 
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Basics
+# ---
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+alias g=git
+alias ll="ls -al"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/.zshrc.work ] && source ~/.zshrc.work
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+export CARGO_HOME="$HOME/.cargo"
+export PATH="$CARGO_HOME/bin:$PATH"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby osx bundler brew rails emoji-clock)
+export GOPATH="$HOME"
+export PATH="$GOPATH/bin:$PATH"
 
-# User configuration
+export NODENV_ROOT="$HOME/.nodenv"
+export PATH="$NODENV_ROOT/bin:$PATH"
 
-export PATH="/usr/local/bin:/usr/bin:/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export RBENV_ROOT="$HOME/.rbenv"
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
-source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(zoxide init zsh)"
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Plugins
+# ---
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+source ~/.zsh.d/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh.d/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# Functions
+# ---
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+function ghq-fzf() {
+  local selected_dir=$(ghq list | fzf --query="$LBUFFER")
 
-# for Go lang
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
-
-# for rbenv
-export PATH="$HOME/.rbenv/bin:$PATH" 
-eval "$(rbenv init - zsh)"
-
-# util
-alias repos='ghq list -p | peco'
-alias repo='cd $(repos)'
-
-function get_target_repo() {
-  if [ $# -eq 1 ]; then
-    echo $1
-  else
-    echo $(repos)
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd $(ghq root)/${selected_dir}"
+    zle accept-line
   fi
+
+  zle reset-prompt
+}
+zle -N ghq-fzf
+bindkey "^g" ghq-fzf
+
+function git-branch-fzf() {
+  local selected_branch=$(git branch --sort=-committerdate | fzf --query="$LBUFFER" | sed -e "s/^.* //g")
+  
+  if [ -n "$selected_branch" ]; then
+    BUFFER="git switch ${selected_branch}"
+    zle accept-line
+  fi
+
+  zle reset-prompt
+}
+zle -N git-branch-fzf
+bindkey "^]" git-branch-fzf
+
+function history-fzf() {
+  local selected_history=$(history -nr -1000 | fzf --query="$LBUFFER")
+
+  if [ -n "$selected_history" ]; then
+    BUFFER="$selected_history"
+    zle end-of-line
+  fi
+
+  zle redisplay
+}
+zle -N history-fzf
+bindkey "^r" history-fzf
+
+function ide() {
+  local W=$(tmux display -p '#{window_width}')
+  local L=$(expr $W / 4)
+  local R=$(expr $W / 4)
+
+  tmux split-pane -h
+  tmux split-pane -h
+  tmux resize-pane -t{left} -x $L
+  tmux resize-pane -t{right} -x $R
+
+  tmux select-pane -t{left}
+  tmux send-keys C-l
+  tmux select-pane -R
+  tmux send-keys C-l
 }
 
-function rubymine() {
-  open -a RubyMine $(get_target_repo $1)
-}
