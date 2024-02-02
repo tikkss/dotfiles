@@ -156,7 +156,6 @@ def configure(keymap):
         # Control bindings
         keymap_mac_like[ "C-D" ] = "Delete"
         keymap_mac_like[ "C-H" ] = "Back"
-        keymap_mac_like[ "C-J" ] = "Enter"
         keymap_mac_like[ "C-K" ] = "S-End","Delete"
         keymap_mac_like[ "C-U" ] = "S-Home","Delete"
         keymap_mac_like[ "C-W" ] = "C-S-Left","Delete"
@@ -211,7 +210,6 @@ def configure(keymap):
         # Alt as Command instead of Ctrl bindings
         keymap_mac_like[ "A-D" ] = "C-D"
         keymap_mac_like[ "A-H" ] = "C-H"
-        keymap_mac_like[ "A-J" ] = "C-J"
         keymap_mac_like[ "A-K" ] = "C-K"
         keymap_mac_like[ "A-U" ] = "C-U"
         keymap_mac_like[ "A-W" ] = "C-W"
