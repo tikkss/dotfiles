@@ -119,18 +119,16 @@ zle -N history-fzf
 bindkey "^r" history-fzf
 
 function ide() {
-  local W=$(tmux display -p '#{window_width}')
-  local L=$(expr $W / 4)
-  local R=$(expr $W / 4)
+  tmux split-window -v -p 30
+  tmux split-window -h -p 66
+  tmux split-window -h -p 50
 
-  tmux split-pane -h
-  tmux split-pane -h
-  tmux resize-pane -t{left} -x $L
-  tmux resize-pane -t{right} -x $R
-
-  tmux select-pane -t{left}
   tmux send-keys C-l
-  tmux select-pane -R
+  tmux select-pane -L
+  tmux send-keys C-l
+  tmux select-pane -L
+  tmux send-keys C-l
+  tmux select-pane -U
   tmux send-keys C-l
 }
 
