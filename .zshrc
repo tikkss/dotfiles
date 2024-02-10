@@ -40,6 +40,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Basics
 # ---
 
+# bash like
+bindkey \^U backward-kill-line
+
 alias g=git
 alias ll="ls -al"
 
