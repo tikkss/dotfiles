@@ -70,6 +70,8 @@ eval "$(starship init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init zsh)"
 
+WORDCHARS=${WORDCHARS:s,/,,}
+
 # Plugins
 # ---
 
