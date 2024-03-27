@@ -65,6 +65,9 @@ export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
 eval "$(starship init zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
