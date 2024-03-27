@@ -1,0 +1,18 @@
+import = ['~/.alacritty.macos.yml', '~\AppData\Roaming\alacritty\alacritty.windows.toml']
+live_config_reload = true
+
+[font.bold]
+family = "UDEV Gothic"
+
+[font.bold_italic]
+family = "UDEV Gothic"
+
+[font.italic]
+family = "UDEV Gothic"
+
+[font.normal]
+family = "UDEV Gothic"
+
+[window]
+opacity = 0.8
+startup_mode = "Maximized"
