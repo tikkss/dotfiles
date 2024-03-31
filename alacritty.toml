@@ -15,4 +15,5 @@ family = "UDEV Gothic"
 
 [window]
 opacity = 0.8
+option_as_alt = "OnlyLeft"
 startup_mode = "Maximized"
