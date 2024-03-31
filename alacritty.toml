@@ -1,4 +1,4 @@
-import = ['~/.alacritty.macos.yml', '~\AppData\Roaming\alacritty\alacritty.windows.toml']
+import = ['~/.alacritty.macos.toml', '~\AppData\Roaming\alacritty\alacritty.windows.toml']
 live_config_reload = true
 
 [font.bold]
