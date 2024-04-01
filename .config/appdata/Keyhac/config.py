@@ -138,6 +138,23 @@ def configure(keymap):
         keymap_vim[ "O-LCtrl" ] = vim_escape
         keymap_vim[ "A-V" ]     = "S-Insert"
 
+    # Meta key bindings
+    if 1:
+        keymap_meta = keymap.defineWindowKeymap(
+            check_func=activate_if([
+              "Code.exe",
+              "cmd.exe",
+              "gvim.exe",
+              "mintty.exe",
+              "powershell.exe",
+              "rubymine64.exe",
+              "WindowsTerminal.exe",
+              "alacritty.exe",
+            ])
+        )
+        keymap_meta[ "W-B" ] = "LAlt-B"
+        keymap_meta[ "W-F" ] = "LAlt-F"
+
     # Mac like control bindings
     if 1:
         keymap_mac_like = keymap.defineWindowKeymap(
@@ -169,7 +186,7 @@ def configure(keymap):
               "mintty.exe",
               "powershell.exe",
               "WindowsTerminal.exe",
-#              "alacritty.exe",
+              "alacritty.exe",
             ])
         )
 
