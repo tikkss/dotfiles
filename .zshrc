@@ -52,7 +52,7 @@ alias ll="ls -al"
 export CARGO_HOME="$HOME/.cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 
-eval "$(fzf --zsh)"
+type fzf > /dev/null 2>&1 && eval "$(fzf --zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS="--height 40% --reverse --border"
 
