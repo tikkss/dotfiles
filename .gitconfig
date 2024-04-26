@@ -24,6 +24,8 @@
 	autosetuprebase = always
 [color]
 	ui = auto
+[commit]
+	verbose = true
 [core]
 	commentchar = ~
 	editor = vim
