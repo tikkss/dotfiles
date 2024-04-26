@@ -7,9 +7,9 @@
 [alias]
 	a = add
 	aa = !git add -u && git add . && git status
-	ac = !git add -u && git add . && git commit -m
+	ac = !git add -u && git add . && git commit
 	br = branch
-	c = commit -m
+	c = commit
 	cah = commit --amend -C @
 	df = diff
 	dfc = diff --cached
