@@ -1,6 +1,6 @@
 set clipboard+=unnamed
 " yank then copy to clipboard for WSL
-if system('uname -a | grep Linux | grep Microsoft') != ''
+if system('uname -a | grep Linux | grep -E "(M|m)icrosoft"') != ''
   augroup myYank
     autocmd!
     autocmd TextYankPost * :call system('clip.exe', @")
