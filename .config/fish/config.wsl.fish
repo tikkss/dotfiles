@@ -1,5 +1,3 @@
-set -x SSH_AUTH_SOCK '/c/wsl-ssh-agent/ssh-agent.sock'
-
 alias gvim gvim.exe
 alias open xdg-open
 
