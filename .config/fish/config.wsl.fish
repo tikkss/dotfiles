@@ -1,4 +1,3 @@
-set -x DOCKER_HOST 'tcp://0.0.0.0:2375'
 set -x SSH_AUTH_SOCK '/c/wsl-ssh-agent/ssh-agent.sock'
 
 alias gvim gvim.exe
