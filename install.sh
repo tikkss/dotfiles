@@ -49,7 +49,6 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   ln -nfv $dotfiles_base/.config/memo/config.toml $userprofile/.config/memo/config.toml
   ln -nfv $dotfiles_base/.gitconfig $userprofile/.gitconfig
   ln -nfv $dotfiles_base/.ideavimrc $userprofile/.ideavimrc
-  ln -nfv $dotfiles_base/.wslconfig $userprofile/.wslconfig
   ln -snfv $dotfiles_base/.zshrc.wsl ~/.zshrc.local
   sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 
