@@ -56,6 +56,7 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   # Build & link diff-highlight
   cd /usr/share/doc/git/contrib/diff-highlight/
   sudo make
+  sudo chmod 755 diff-highlight
   sudo ln -snfv /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
 
   # Install starship
