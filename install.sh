@@ -26,6 +26,7 @@ ln -snfv $dotfiles_base/.zshrc ~/.zshrc
 
 # for Mac
 if [[ `uname -a` =~ Darwin ]]; then
+  ln -snfv $dotfiles_base/.zshrc.macos ~/.zshrc.local
   ln -snfv $dotfiles_base/alacritty.toml ~/.alacritty.toml
   ln -snfv $dotfiles_base/alacritty.macos.toml ~/.alacritty.macos.toml
   sudo ln -snfv /usr/local/share/git-core/contrib/diff-highlight/diff-highlight /usr/local/bin/diff-highlight
