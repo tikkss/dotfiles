@@ -71,8 +71,6 @@ eval "$(rbenv init - zsh)"
 
 eval "$(starship init zsh)"
 
-eval "$($HOME/wsl2-ssh-agent)"
-
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init zsh)"
 

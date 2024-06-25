@@ -1,3 +1,5 @@
+eval "$($HOME/wsl2-ssh-agent)"
+
 alias gvim gvim.exe
 alias open xdg-open
 alias wsl2_drop_caches='sudo sh -c "sync && echo 3 > /proc/sys/vm/drop_caches"'
