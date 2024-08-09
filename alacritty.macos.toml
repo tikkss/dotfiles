@@ -2,5 +2,5 @@
 size = 16.0
 
 [shell]
-args = ["-l", "-c", "tmux attach || tmux"]
+args = ["-l", "-c", "tmux"]
 program = "/bin/zsh"
