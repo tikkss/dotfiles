@@ -1,6 +1,6 @@
 [font]
 size = 16.0
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux"]
 program = "/bin/zsh"
