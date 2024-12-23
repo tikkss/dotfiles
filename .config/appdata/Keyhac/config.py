@@ -150,6 +150,7 @@ def configure(keymap):
               "rubymine64.exe",
               "WindowsTerminal.exe",
               "alacritty.exe",
+              "devenv.exe",
             ])
         )
         keymap_meta[ "W-B" ] = "LAlt-B"
@@ -167,6 +168,7 @@ def configure(keymap):
               "rubymine64.exe",
               "WindowsTerminal.exe",
               "alacritty.exe",
+              "devenv.exe",
             ])
         )
 
@@ -187,6 +189,7 @@ def configure(keymap):
               "powershell.exe",
               "WindowsTerminal.exe",
               "alacritty.exe",
+              "devenv.exe",
             ])
         )
 
