@@ -86,10 +86,11 @@ source ~/.zsh.d/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ---
 
 function ghq-fzf() {
-  local selected_dir=$(ghq list | fzf --query="$LBUFFER")
+  local selected_repo=$(ghq list | fzf --query="$LBUFFER")
 
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd $(ghq root)/${selected_dir}"
+  if [ -n "$selected_repo" ]; then
+    selected_repo=$(ghq list --full-path --exact $selected_repo)
+    BUFFER="cd ${selected_repo}"
     zle accept-line
   fi
 
