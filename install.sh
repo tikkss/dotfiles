@@ -2,15 +2,9 @@
 
 dotfiles_base="$(cd $(dirname "$0") && pwd)"
 
-mkdir -p ~/.config/fish/conf.d
 mkdir -p ~/.config/git
 mkdir -p ~/.config/memo
 mkdir -p ~/.vim/colors
-ln -snfv $dotfiles_base/.config/fish/conf.d/000-env.fish ~/.config/fish/conf.d/000-env.fish
-ln -snfv $dotfiles_base/.config/fish/config.fish ~/.config/fish/config.fish
-ln -snfv $dotfiles_base/.config/fish/fishfile ~/.config/fish/fishfile
-ln -snfv $dotfiles_base/.config/fish/functions/git_branch_search.fish ~/.config/fish/functions/git_branch_search.fish
-ln -snfv $dotfiles_base/.config/fish/functions/open-pull-request.fish ~/.config/fish/functions/open-pull-request.fish
 ln -snfv $dotfiles_base/.config/git/ignore ~/.config/git/ignore
 ln -snfv $dotfiles_base/.config/memo/config.toml ~/.config/memo/config.toml
 ln -snfv $dotfiles_base/.config/starship.toml ~/.config/starship.toml
@@ -44,14 +38,12 @@ if [[ `uname -a` =~ Linux && `uname -a` =~ (M|m)icrosoft ]]; then
   ln -nfv $dotfiles_base/alacritty.windows.toml $appdata/alacritty/
   ln -nfv $dotfiles_base/.config/appdata/Keyhac/config.py $appdata/Keyhac/config.py
   ln -nfv $dotfiles_base/.config/appdata/WindowsTerminal/settings.json $appdata/../Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-  ln -snfv $dotfiles_base/.config/fish/config.wsl.fish ~/.config/fish/config.local.fish
   ln -nfv $dotfiles_base/.config/git/ignore $userprofile/.config/git/ignore
   ln -snfv $dotfiles_base/.config/memo/config.wsl.toml ~/.config/memo/config.toml
   ln -nfv $dotfiles_base/.config/memo/config.toml $userprofile/.config/memo/config.toml
   ln -nfv $dotfiles_base/.gitconfig $userprofile/.gitconfig
   ln -nfv $dotfiles_base/.ideavimrc $userprofile/.ideavimrc
   ln -snfv $dotfiles_base/.zshrc.wsl ~/.zshrc.local
-  sudo ln -snfv /usr/bin/fish /usr/local/bin/fish
 
   # Build & link diff-highlight
   cd /usr/share/doc/git/contrib/diff-highlight/
@@ -137,6 +129,4 @@ if [ -d ~/.zsh.d/plugins/zsh-syntax-highlighting ]; then
 else
   git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.zsh.d/plugins/zsh-syntax-highlighting
 fi
-
-fish -c "fisher update"
 
