@@ -36,7 +36,8 @@
             {
                 "face": "UDEV Gothic",
                 "size": 13
-            }
+            },
+            "opacity": 80
         },
         "list": 
         [
