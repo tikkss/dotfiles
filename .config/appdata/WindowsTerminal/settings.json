@@ -1,43 +1,53 @@
-
-// To view the default settings, hold "alt" while clicking on the "Settings" button.
-// For documentation on these settings, see: https://aka.ms/terminal-documentation
-
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-
-    "defaultProfile": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
-
-    "launchMode": "maximized",
-
-    "profiles":
-    {
-        "defaults":
+    "actions": [],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "keybindings": 
+    [
         {
-            "fontFace": "UDEV Gothic",
-            "fontSize": 14
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
         },
-        "list":
+        {
+            "id": "Terminal.PasteFromClipboard",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "Terminal.DuplicatePaneAuto",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
         [
             {
-                // Make changes here to the powershell.exe profile
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "name": "Windows PowerShell",
-                "commandline": "powershell.exe",
-                "hidden": false
-            },
-            {
-                // Make changes here to the cmd.exe profile
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "cmd",
-                "commandline": "cmd.exe",
-                "hidden": false
-            },
-            {
-                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
                 "hidden": false,
-                "name": "Ubuntu-18.04",
-                "source": "Windows.Terminal.Wsl",
-                "commandline": "wsl.exe --distribution Ubuntu-18.04 --exec /usr/bin/fish"
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "\u30b3\u30de\u30f3\u30c9 \u30d7\u30ed\u30f3\u30d7\u30c8"
+            },
+            {
+                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
+                "hidden": true,
+                "name": "Ubuntu-24.04",
+                "source": "Windows.Terminal.Wsl"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -46,28 +56,31 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "guid": "{1b06a6f7-61ce-5807-a424-f4a61ad49c9e}",
                 "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl",
-                "commandline": "wsl.exe --distribution Ubuntu-20.04 --exec /usr/bin/fish"
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{72ea52d3-b871-5455-9eb7-317bbe227e0d}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "source": "Git"
+            },
+            {
+                "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+                "hidden": false,
+                "name": "Ubuntu 24.04.1 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
             }
         ]
     },
-
-    // Add custom color schemes to this array
     "schemes": [],
-
-    // Add any keybinding overrides to this array.
-    // To unbind a default keybinding, set the command to "unbound"
-    "keybindings":
-    [
-        // Pane Management
-        { "command": { "action": "splitPane", "split": "vertical" }, "keys": "alt+d" },
-        { "command": { "action": "splitPane", "split": "horizontal" }, "keys": "alt+shift+d" },
-        { "command": { "action": "resizePane", "direction": "down" }, "keys": "ctrl+alt+/" },
-        { "command": { "action": "resizePane", "direction": "left" }, "keys": "ctrl+alt+;" },
-        { "command": { "action": "resizePane", "direction": "right" }, "keys": "ctrl+alt+'" },
-        { "command": { "action": "resizePane", "direction": "up" }, "keys": "ctrl+alt+[" }
-    ]
+    "themes": []
 }
