@@ -44,7 +44,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 bindkey \^U backward-kill-line
 
 alias g=git
-alias ll="ls -al"
+alias ll="ls -al --color=auto"
+alias ls="ls --color=auto"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 [ -f ~/.zshrc.work ] && source ~/.zshrc.work
