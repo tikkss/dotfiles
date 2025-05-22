@@ -30,7 +30,8 @@
     {
         "defaults":
         {
-            "colorScheme": "DraculaPlus mixed Apple System Colors"
+            "colorScheme": "DraculaPlus mixed Apple System Colors",
+            "cursorShape": "filledBox"
         },
         "list": 
         [
