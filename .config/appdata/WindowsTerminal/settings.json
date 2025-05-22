@@ -84,6 +84,7 @@
                 "source": "Git"
             },
             {
+                "commandline": "wsl.exe --distribution Ubuntu-24.04 --exec /usr/bin/zsh -l -c tmux",
                 "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
                 "hidden": false,
                 "name": "Ubuntu 24.04.1 LTS",
