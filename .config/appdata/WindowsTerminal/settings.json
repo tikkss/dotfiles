@@ -28,7 +28,10 @@
     ],
     "profiles": 
     {
-        "defaults": {},
+        "defaults":
+        {
+            "colorScheme": "DraculaPlus mixed Apple System Colors"
+        },
         "list": 
         [
             {
@@ -81,6 +84,31 @@
             }
         ]
     },
-    "schemes": [],
+    "schemes":
+    [
+        {
+            "background": "#212121",
+            "black": "#21222C",
+            "blue": "#82AAFF",
+            "brightBlack": "#878787",
+            "brightBlue": "#D6ACFF",
+            "brightCyan": "#A4FFFF",
+            "brightGreen": "#69FF94",
+            "brightPurple": "#FF92DF",
+            "brightRed": "#FF6E6E",
+            "brightWhite": "#F8F8F2",
+            "brightYellow": "#FFCB6B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#8BE9FD",
+            "foreground": "#F8F8F2",
+            "green": "#26A439",
+            "name": "DraculaPlus mixed Apple System Colors",
+            "purple": "#C792EA",
+            "red": "#CC372E",
+            "selectionBackground": "#FFFFFF",
+            "white": "#F8F8F2",
+            "yellow": "#FFCB6B"
+        }
+    ],
     "themes": []
 }
