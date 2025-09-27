@@ -34,6 +34,7 @@
 [ghq]
 	root = ~/src
 [init]
+	defaultBranch = main
 	templatedir = ~/.git-templates/git-secrets
 [merge]
 	# from 1.7.6
