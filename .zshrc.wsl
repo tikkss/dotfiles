@@ -12,3 +12,7 @@ function rubymine() {
   cmd.exe /c rubymine.cmd $(wslpath -w $(pwd))
 }
 
+function portable_clip() {
+  clip.exe
+}
+

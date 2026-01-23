@@ -1,2 +1,6 @@
 export PATH="/usr/local/sbin:$PATH"
 
+function portable_clip() {
+  pbcopy
+}
+
