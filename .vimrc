@@ -71,5 +71,8 @@ autocmd FileType gitcommit set colorcolumn=+1
 call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+Plug 'gabrielelana/vim-markdown'
+  let g:markdown_enable_spell_checking = 0       " 日本語の大半がハイライトされるため
+  let g:markdown_mapping_switch_status = '<S-s>' " デフォルトの <Space> はよく使うため
 call plug#end()
 
