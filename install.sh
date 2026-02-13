@@ -20,6 +20,7 @@ ln -snfv $dotfiles_base/.zshrc ~/.zshrc
 
 # for Mac
 if [[ `uname -a` =~ Darwin ]]; then
+  ln -snfv $dotfiles_base/.config/ghostty/config ~/.config/ghostty/config
   ln -snfv $dotfiles_base/.zshrc.macos ~/.zshrc.local
   ln -snfv $dotfiles_base/alacritty.toml ~/.alacritty.toml
   ln -snfv $dotfiles_base/alacritty.macos.toml ~/.alacritty.macos.toml

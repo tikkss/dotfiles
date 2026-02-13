@@ -1,0 +1,4 @@
+background-opacity = 0.8
+command = /bin/zsh -l -c tmux
+macos-titlebar-style = hidden
+
