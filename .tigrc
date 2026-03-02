@@ -1,4 +1,4 @@
 set diff-highlight = true
-bind generic x !zsh -ic 'echo -n %(commit) | portable_clip'
-bind generic P !zsh -c "clear && open-pull-request %(commit)"
+bind generic x >zsh -ic 'echo -n %(commit) | portable_clip'
+bind generic P >zsh -c "clear && open-pull-request %(commit)"
 
