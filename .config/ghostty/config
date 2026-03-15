@@ -1,5 +1,6 @@
 background-opacity = 0.8
 command = /bin/zsh -l -c tmux
+font-feature = -calt, -liga, -dlig
 macos-option-as-alt = left
 macos-titlebar-style = hidden
 
