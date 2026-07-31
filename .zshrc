@@ -43,6 +43,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # bash like
 bindkey \^U backward-kill-line
 
+# Do not save to history if it starts with a space
+setopt hist_ignore_space
+
 alias g=git
 alias ll="ls -al --color=auto"
 alias ls="ls --color=auto"
